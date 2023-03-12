@@ -1,5 +1,6 @@
-from PuzzleState import PuzzleState 
+from PuzzleState import PuzzleState
 import Algorithms.Algorithm_AStar as AStar
+from Algorithms.Broad import kurwa
 
 def loadPuzzle():
     puzzle = []
@@ -16,11 +17,12 @@ def loadPuzzle():
 
     return rows, cols, puzzle
 
+
 puzzle = PuzzleState(*loadPuzzle())
 
-#print(puzzle)
-#print(puzzle.check())
+# print(puzzle)
+# print(puzzle.check())
 
-print(AStar.HammingDistance(puzzle))
-print(AStar.ManhattanDistance(puzzle))
-
+#print(AStar.HammingDistance(puzzle))
+#print(AStar.ManhattanDistance(puzzle))
+print(kurwa(puzzle))
