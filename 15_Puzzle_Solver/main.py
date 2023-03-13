@@ -3,6 +3,7 @@ from PuzzleState import PuzzleState
 from Algorithms.Broad import kurwa
 
 
+
 def loadPuzzle():
     puzzle = []
 
