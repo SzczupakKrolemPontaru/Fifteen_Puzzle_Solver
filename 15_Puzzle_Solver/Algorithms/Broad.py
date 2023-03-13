@@ -1,51 +1,44 @@
 
-import queue
+import collections
+import copy
 
 UP = (-1, 0)
 DOWN = (1, 0)
 LEFT = (0, -1)
 RIGHT = (0, 1)
+
+
 def kurwa(puzzle):
-    kolejka = queue.Queue()
+    kolejka = collections.deque()
 
     if puzzle.check():
         print("za pierwszym kurwa")
         return puzzle
-    kolejka.put(puzzle)
+    kolejka.append(puzzle)
 
-    while not kolejka.empty():
+    while kolejka:
 
-        current = kolejka.get()
+        current = kolejka.popleft()
 
         if current.check():
             return current
 
-        if  current.findIndexOfNum(0)[0] != 0:
-            temp = current
-            temp.move(UP)
-            if temp.check():
-                return temp
-            kolejka.put(temp)
+        if current.findIndexOfNum(0)[0] != 0:
+            temp = copy.deepcopy(current)
+            temp.move(temp.UP)
+            kolejka.append(temp)
 
-        if  current.findIndexOfNum(0)[1] != 0:
-            temp = current
-            temp.move(LEFT)
-            if temp.check():
-                return temp
-            kolejka.put(temp)
+        if current.findIndexOfNum(0)[1] != 0:
+            temp = copy.deepcopy(current)
+            temp.move(temp.LEFT)
+            kolejka.append(temp)
 
-        if  current.findIndexOfNum(0)[0] != current.rows:
-            temp = current
-            temp.move(DOWN)
-            if temp.check():
-                return temp
-            kolejka.put(temp)
+        if current.findIndexOfNum(0)[0] != current.rows - 1:
+            temp = copy.deepcopy(current)
+            temp.move(temp.DOWN)
+            kolejka.append(temp)
 
-
-        if  current.findIndexOfNum(0)[1] != current.columns:
-            temp = current
-            temp.move(RIGHT)
-            if temp.check():
-                return temp
-            kolejka.put(temp)
-
+        if current.findIndexOfNum(0)[1] != current.columns - 1:
+            temp = copy.deepcopy(current)
+            temp.move(temp.RIGHT)
+            kolejka.append(temp)

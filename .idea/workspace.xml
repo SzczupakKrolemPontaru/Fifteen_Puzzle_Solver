@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f63f8fe-54d4-4418-b3b5-7bfea25d8811" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/15_Puzzle_Solver/Algorithms/Broad.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15_Puzzle_Solver/Algorithms/Algorithm_AStar.py" beforeDir="false" afterPath="$PROJECT_DIR$/15_Puzzle_Solver/Algorithms/Algorithm_AStar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15_Puzzle_Solver/PuzzleState.py" beforeDir="false" afterPath="$PROJECT_DIR$/15_Puzzle_Solver/PuzzleState.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15_Puzzle_Solver/4x4_01_0001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/15_Puzzle_Solver/4x4_01_0001.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15_Puzzle_Solver/Algorithms/Broad.py" beforeDir="false" afterPath="$PROJECT_DIR$/15_Puzzle_Solver/Algorithms/Broad.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/15_Puzzle_Solver/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/15_Puzzle_Solver/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,21 +36,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/projekt/SkyNet_SISE",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/J.Stepnicki/Desktop/repozytoria 4sem/SkyNet_SISE&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projekt\SkyNet_SISE\15_Puzzle_Solver\Algorithms" />
@@ -69,6 +68,8 @@
       <workItem from="1678619285643" duration="4107000" />
       <workItem from="1678632800277" duration="2627000" />
       <workItem from="1678642406743" duration="11678000" />
+      <workItem from="1678705182269" duration="2616000" />
+      <workItem from="1678708404275" duration="1979000" />
     </task>
     <servers />
   </component>
@@ -79,7 +80,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SkyNet_SISE$main.coverage" NAME="main Coverage Results" MODIFIED="1678657075510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/15_Puzzle_Solver" />
-    <SUITE FILE_PATH="coverage/SkyNet_SISE$Broad.coverage" NAME="Broad Coverage Results" MODIFIED="1678655983203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/15_Puzzle_Solver/Algorithms" />
+    <SUITE FILE_PATH="coverage/SkyNet_SISE$main.coverage" NAME="main Coverage Results" MODIFIED="1678710370679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/15_Puzzle_Solver" />
+    <SUITE FILE_PATH="coverage/SkyNet_SISE$Broad.coverage" NAME="Broad Coverage Results" MODIFIED="1678708772246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/15_Puzzle_Solver/Algorithms" />
   </component>
 </project>

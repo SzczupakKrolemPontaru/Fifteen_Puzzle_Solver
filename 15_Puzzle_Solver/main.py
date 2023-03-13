@@ -1,6 +1,7 @@
 from PuzzleState import PuzzleState
-import Algorithms.Algorithm_AStar as AStar
+#import Algorithms.Algorithm_AStar as AStar
 from Algorithms.Broad import kurwa
+
 
 def loadPuzzle():
     puzzle = []
