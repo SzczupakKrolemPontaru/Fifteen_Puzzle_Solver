@@ -7,20 +7,20 @@ LEFT = (0, -1)
 RIGHT = (0, 1)
 
 
-def bfs(puzzle):
+def dfs(puzzle):
     kolejka = collections.deque()
     visited = set()
     iter = 0
+    
     if puzzle.check():
         return puzzle
-    kolejka.append(puzzle)
+    kolejka.appendleft(puzzle)
 
     while kolejka:
 
         current = kolejka.popleft()
 
         if current.check():
-            print(iter)
             return current
 
         if current.findIndexOfNum(0)[0] != 0:
@@ -50,3 +50,7 @@ def bfs(puzzle):
             if tuple(map(tuple, temp.array)) not in visited:
                 visited.add(tuple(map(tuple, temp.array)))
                 kolejka.append(temp)
+
+            
+
+        
