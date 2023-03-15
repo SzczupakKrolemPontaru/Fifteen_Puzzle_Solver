@@ -1,5 +1,5 @@
 from PuzzleState import PuzzleState
-#import Algorithms.Algorithm_AStar as AStar
+# import Algorithms.Algorithm_AStar as AStar
 from Algorithms.Broad import bfs
 import sys
 
@@ -12,6 +12,7 @@ fSolution = ''
 strategy = ''
 parameter = ''
 fStatistics = ''
+
 
 def loadPuzzle():
     puzzle = []
@@ -28,6 +29,7 @@ def loadPuzzle():
 
     return rows, cols, puzzle
 
+
 puzzle = PuzzleState(*loadPuzzle())
 
-#print(bfs(puzzle))
+print(bfs(puzzle))

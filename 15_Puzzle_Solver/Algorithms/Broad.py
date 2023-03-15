@@ -1,13 +1,15 @@
 import collections
 import copy
 
-def bfs(puzzle):
 
+def bfs(puzzle):
     class bfs_class:
         krotek = puzzle
         path = ""
-        def __init__(self,puzzle):
-            self.krotek = puzzle
+        deep = 0
+
+        def __init__(self, tablica):
+            self.krotek = tablica
 
     kolejka = collections.deque()
     visited = set()
@@ -16,6 +18,7 @@ def bfs(puzzle):
     if start.krotek.check():
         return start.krotek
     kolejka.append(start)
+    start.deep += 1
 
     while kolejka:
 
@@ -24,6 +27,7 @@ def bfs(puzzle):
         if current.krotek.check():
             print(iter)
             print(current.path)
+            print(current.deep)
             return current.krotek
 
         if current.krotek.findIndexOfNum(0)[0] != 0:
@@ -32,6 +36,7 @@ def bfs(puzzle):
             if tuple(map(tuple, temp.krotek.array)) not in visited:
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "U"
+                temp.deep += 1
                 kolejka.append(temp)
 
         if current.krotek.findIndexOfNum(0)[1] != 0:
@@ -40,6 +45,7 @@ def bfs(puzzle):
             if tuple(map(tuple, temp.krotek.array)) not in visited:
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "L"
+                temp.deep += 1
                 kolejka.append(temp)
 
         if current.krotek.findIndexOfNum(0)[0] != current.krotek.rows - 1:
@@ -48,6 +54,7 @@ def bfs(puzzle):
             if tuple(map(tuple, temp.krotek.array)) not in visited:
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "D"
+                temp.deep += 1
                 kolejka.append(temp)
 
         if current.krotek.findIndexOfNum(0)[1] != current.krotek.columns - 1:
@@ -56,4 +63,5 @@ def bfs(puzzle):
             if tuple(map(tuple, temp.krotek.array)) not in visited:
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "R"
+                temp.deep += 1
                 kolejka.append(temp)
