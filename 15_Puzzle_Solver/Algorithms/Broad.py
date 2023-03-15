@@ -1,155 +1,68 @@
 import collections
 import copy
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of b144b13 (BFS MA PATH)
-UP = (-1, 0)
-DOWN = (1, 0)
-LEFT = (0, -1)
-RIGHT = (0, 1)
 
-
-<<<<<<< HEAD
 def bfs(puzzle):
-=======
-def bfs(puzzle):
-
     class bfs_class:
         krotek = puzzle
         path = ""
-        def __init__(self,puzzle):
-            self.krotek = puzzle
+        deep = 0
 
->>>>>>> parent of 946534d (bfs huczy)
+        def __init__(self, tablica):
+            self.krotek = tablica
+
     kolejka = collections.deque()
     visited = set()
-    iteration = 0
 
-<<<<<<< HEAD
-    if puzzle.check():
-        return puzzle
-    kolejka.append(puzzle)
-=======
     start = bfs_class(puzzle)
     if start.krotek.check():
         return start.krotek
     kolejka.append(start)
->>>>>>> parent of 946534d (bfs huczy)
-=======
-def bfs(puzzle):
-    kolejka = collections.deque()
-    visited = set()
-    iter = 0
-    if puzzle.check():
-        return puzzle
-    kolejka.append(puzzle)
->>>>>>> parent of b144b13 (BFS MA PATH)
+    start.deep += 1
 
     while kolejka:
 
         current = kolejka.popleft()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if current.check():
-            print(iteration)
-            return current
-=======
         if current.krotek.check():
             print(iter)
             print(current.path)
+            print(current.deep)
             return current.krotek
->>>>>>> parent of 946534d (bfs huczy)
 
-        if current.findIndexOfNum(0)[0] != 0:
+        if current.krotek.findIndexOfNum(0)[0] != 0:
             temp = copy.deepcopy(current)
-<<<<<<< HEAD
-            temp.move(temp.UP)
-            if tuple(map(tuple, temp.array)) not in visited:
-                visited.add(tuple(map(tuple, temp.array)))
-=======
             temp.krotek.move(temp.krotek.UP)
             if tuple(map(tuple, temp.krotek.array)) not in visited:
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "U"
->>>>>>> parent of 946534d (bfs huczy)
-=======
-        if current.check():
-            print(iter)
-            return current
-
-        if current.findIndexOfNum(0)[0] != 0:
-            temp = copy.deepcopy(current)
-            temp.move(temp.UP)
-            if tuple(map(tuple, temp.array)) not in visited:
-                visited.add(tuple(map(tuple, temp.array)))
->>>>>>> parent of b144b13 (BFS MA PATH)
+                temp.deep += 1
                 kolejka.append(temp)
-                iteration += 1
 
-        if current.findIndexOfNum(0)[1] != 0:
+        if current.krotek.findIndexOfNum(0)[1] != 0:
             temp = copy.deepcopy(current)
-<<<<<<< HEAD
-<<<<<<< HEAD
-            temp.move(temp.LEFT)
-            if tuple(map(tuple, temp.array)) not in visited:
-                visited.add(tuple(map(tuple, temp.array)))
-=======
             temp.krotek.move(temp.krotek.LEFT)
             if tuple(map(tuple, temp.krotek.array)) not in visited:
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "L"
->>>>>>> parent of 946534d (bfs huczy)
-=======
-            temp.move(temp.LEFT)
-            if tuple(map(tuple, temp.array)) not in visited:
-                visited.add(tuple(map(tuple, temp.array)))
->>>>>>> parent of b144b13 (BFS MA PATH)
+                temp.deep += 1
                 kolejka.append(temp)
-                iteration += 1
 
-        if current.findIndexOfNum(0)[0] != current.rows - 1:
+        if current.krotek.findIndexOfNum(0)[0] != current.krotek.rows - 1:
             temp = copy.deepcopy(current)
-<<<<<<< HEAD
-<<<<<<< HEAD
-            temp.move(temp.DOWN)
-            if tuple(map(tuple, temp.array)) not in visited:
-                visited.add(tuple(map(tuple, temp.array)))
-=======
             temp.krotek.move(temp.krotek.DOWN)
             if tuple(map(tuple, temp.krotek.array)) not in visited:
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "D"
->>>>>>> parent of 946534d (bfs huczy)
-=======
-            temp.move(temp.DOWN)
-            if tuple(map(tuple, temp.array)) not in visited:
-                visited.add(tuple(map(tuple, temp.array)))
->>>>>>> parent of b144b13 (BFS MA PATH)
+                temp.deep += 1
                 kolejka.append(temp)
-                iteration += 1
 
-        if current.findIndexOfNum(0)[1] != current.columns - 1:
+        if current.krotek.findIndexOfNum(0)[1] != current.krotek.columns - 1:
             temp = copy.deepcopy(current)
-<<<<<<< HEAD
-<<<<<<< HEAD
-            temp.move(temp.RIGHT)
-            if tuple(map(tuple, temp.array)) not in visited:
-                visited.add(tuple(map(tuple, temp.array)))
-                kolejka.append(temp)
-                iteration += 1
-=======
             temp.krotek.move(temp.krotek.RIGHT)
             if tuple(map(tuple, temp.krotek.array)) not in visited:
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "R"
+                temp.deep += 1
                 kolejka.append(temp)
->>>>>>> parent of 946534d (bfs huczy)
-=======
-            temp.move(temp.RIGHT)
-            if tuple(map(tuple, temp.array)) not in visited:
-                visited.add(tuple(map(tuple, temp.array)))
-                kolejka.append(temp)
->>>>>>> parent of b144b13 (BFS MA PATH)
+
