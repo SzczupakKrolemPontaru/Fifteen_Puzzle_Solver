@@ -36,5 +36,3 @@ def HammingDistance(puzzle):
                     h_points += 1
 
     return h_points
-
-
