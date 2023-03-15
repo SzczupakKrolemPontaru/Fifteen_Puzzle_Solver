@@ -1,6 +1,7 @@
 from PuzzleState import PuzzleState
 #import Algorithms.Algorithm_AStar as AStar
 from Algorithms.Broad import bfs
+from Algorithms.Depth import dfs
 
 
 def loadPuzzle():
@@ -28,3 +29,4 @@ puzzle = PuzzleState(*loadPuzzle())
 #print(AStar.ManhattanDistance(puzzle))
 
 print(bfs(puzzle))
+print(dfs(puzzle))
