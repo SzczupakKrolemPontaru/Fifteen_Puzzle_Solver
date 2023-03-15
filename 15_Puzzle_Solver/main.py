@@ -21,6 +21,7 @@ def loadPuzzle():
 puzzle = PuzzleState(*loadPuzzle())
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # print(puzzle)
 # print(puzzle.check())
 
@@ -30,3 +31,6 @@ print(bfs(puzzle))
 =======
 #print(bfs(puzzle))
 >>>>>>> parent of 946534d (bfs huczy)
+=======
+print(bfs(puzzle))
+>>>>>>> parent of b144b13 (BFS MA PATH)

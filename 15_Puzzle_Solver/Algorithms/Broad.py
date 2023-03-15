@@ -2,12 +2,16 @@ import collections
 import copy
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of b144b13 (BFS MA PATH)
 UP = (-1, 0)
 DOWN = (1, 0)
 LEFT = (0, -1)
 RIGHT = (0, 1)
 
 
+<<<<<<< HEAD
 def bfs(puzzle):
 =======
 def bfs(puzzle):
@@ -33,11 +37,21 @@ def bfs(puzzle):
         return start.krotek
     kolejka.append(start)
 >>>>>>> parent of 946534d (bfs huczy)
+=======
+def bfs(puzzle):
+    kolejka = collections.deque()
+    visited = set()
+    iter = 0
+    if puzzle.check():
+        return puzzle
+    kolejka.append(puzzle)
+>>>>>>> parent of b144b13 (BFS MA PATH)
 
     while kolejka:
 
         current = kolejka.popleft()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         if current.check():
             print(iteration)
@@ -61,11 +75,23 @@ def bfs(puzzle):
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "U"
 >>>>>>> parent of 946534d (bfs huczy)
+=======
+        if current.check():
+            print(iter)
+            return current
+
+        if current.findIndexOfNum(0)[0] != 0:
+            temp = copy.deepcopy(current)
+            temp.move(temp.UP)
+            if tuple(map(tuple, temp.array)) not in visited:
+                visited.add(tuple(map(tuple, temp.array)))
+>>>>>>> parent of b144b13 (BFS MA PATH)
                 kolejka.append(temp)
                 iteration += 1
 
         if current.findIndexOfNum(0)[1] != 0:
             temp = copy.deepcopy(current)
+<<<<<<< HEAD
 <<<<<<< HEAD
             temp.move(temp.LEFT)
             if tuple(map(tuple, temp.array)) not in visited:
@@ -76,11 +102,17 @@ def bfs(puzzle):
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "L"
 >>>>>>> parent of 946534d (bfs huczy)
+=======
+            temp.move(temp.LEFT)
+            if tuple(map(tuple, temp.array)) not in visited:
+                visited.add(tuple(map(tuple, temp.array)))
+>>>>>>> parent of b144b13 (BFS MA PATH)
                 kolejka.append(temp)
                 iteration += 1
 
         if current.findIndexOfNum(0)[0] != current.rows - 1:
             temp = copy.deepcopy(current)
+<<<<<<< HEAD
 <<<<<<< HEAD
             temp.move(temp.DOWN)
             if tuple(map(tuple, temp.array)) not in visited:
@@ -91,11 +123,17 @@ def bfs(puzzle):
                 visited.add(tuple(map(tuple, temp.krotek.array)))
                 temp.path += "D"
 >>>>>>> parent of 946534d (bfs huczy)
+=======
+            temp.move(temp.DOWN)
+            if tuple(map(tuple, temp.array)) not in visited:
+                visited.add(tuple(map(tuple, temp.array)))
+>>>>>>> parent of b144b13 (BFS MA PATH)
                 kolejka.append(temp)
                 iteration += 1
 
         if current.findIndexOfNum(0)[1] != current.columns - 1:
             temp = copy.deepcopy(current)
+<<<<<<< HEAD
 <<<<<<< HEAD
             temp.move(temp.RIGHT)
             if tuple(map(tuple, temp.array)) not in visited:
@@ -109,3 +147,9 @@ def bfs(puzzle):
                 temp.path += "R"
                 kolejka.append(temp)
 >>>>>>> parent of 946534d (bfs huczy)
+=======
+            temp.move(temp.RIGHT)
+            if tuple(map(tuple, temp.array)) not in visited:
+                visited.add(tuple(map(tuple, temp.array)))
+                kolejka.append(temp)
+>>>>>>> parent of b144b13 (BFS MA PATH)
