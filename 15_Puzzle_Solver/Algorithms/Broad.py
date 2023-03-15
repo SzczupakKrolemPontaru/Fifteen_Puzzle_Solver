@@ -7,13 +7,12 @@ LEFT = (0, -1)
 RIGHT = (0, 1)
 
 
-def kurwa(puzzle):
+def bfs(puzzle):
     kolejka = collections.deque()
     visited = set()
     iteration = 0
 
     if puzzle.check():
-        print("za pierwszym kurwa")
         return puzzle
     kolejka.append(puzzle)
 

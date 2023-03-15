@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6f63f8fe-54d4-4418-b3b5-7bfea25d8811" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15_Puzzle_Solver/4x4_01_0001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/15_Puzzle_Solver/4x4_01_0001.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/15_Puzzle_Solver/Algorithms/Broad.py" beforeDir="false" afterPath="$PROJECT_DIR$/15_Puzzle_Solver/Algorithms/Broad.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/15_Puzzle_Solver/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/15_Puzzle_Solver/main.py" afterDir="false" />
     </list>
@@ -70,11 +69,24 @@
       <workItem from="1678642406743" duration="11678000" />
       <workItem from="1678705182269" duration="2616000" />
       <workItem from="1678708404275" duration="1979000" />
+      <workItem from="1678730335628" duration="380000" />
+      <workItem from="1678732130166" duration="525000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

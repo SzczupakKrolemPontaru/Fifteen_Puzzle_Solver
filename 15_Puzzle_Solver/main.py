@@ -1,6 +1,6 @@
 from PuzzleState import PuzzleState
 #import Algorithms.Algorithm_AStar as AStar
-from Algorithms.Broad import kurwa
+from Algorithms.Broad import bfs
 
 
 
@@ -27,4 +27,4 @@ puzzle = PuzzleState(*loadPuzzle())
 
 #print(AStar.HammingDistance(puzzle))
 #print(AStar.ManhattanDistance(puzzle))
-print(kurwa(puzzle))
+print(bfs(puzzle))
