@@ -3,7 +3,6 @@ from PuzzleState import PuzzleState
 from Algorithms.Broad import bfs
 
 
-
 def loadPuzzle():
     puzzle = []
 
@@ -19,12 +18,15 @@ def loadPuzzle():
 
     return rows, cols, puzzle
 
-
 puzzle = PuzzleState(*loadPuzzle())
 
+<<<<<<< HEAD
 # print(puzzle)
 # print(puzzle.check())
 
 #print(AStar.HammingDistance(puzzle))
 #print(AStar.ManhattanDistance(puzzle))
 print(bfs(puzzle))
+=======
+#print(bfs(puzzle))
+>>>>>>> parent of 946534d (bfs huczy)
