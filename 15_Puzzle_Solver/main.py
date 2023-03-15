@@ -33,3 +33,4 @@ def loadPuzzle():
 puzzle = PuzzleState(*loadPuzzle())
 
 print(bfs(puzzle))
+print("pomusz")
