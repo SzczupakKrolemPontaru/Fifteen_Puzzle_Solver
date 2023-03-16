@@ -27,4 +27,4 @@ puzzle = PuzzleState(*loadPuzzle())
 # print(AStar.ManhattanDistance(puzzle))
 
 print(bfs(puzzle, "LRUD"))
-print(dfs(puzzle, "RLUD"))
+print(dfs(puzzle, "DURL"))

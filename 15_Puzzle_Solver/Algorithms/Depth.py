@@ -3,7 +3,7 @@ import copy
 
 
 def dfs(puzzle, the_way):
-    maxdepth = 20
+    maxdepth = 8
 
     class depp_class:
         krotek = puzzle
@@ -22,7 +22,7 @@ def dfs(puzzle, the_way):
 
     kolejka.append(start)
 
-    def function2(array, direction):
+    def checking(array, direction):
         temp = copy.deepcopy(array)
         temp.krotek.move(direction)
         if temp.krotek.hashme() not in visited:
@@ -31,23 +31,23 @@ def dfs(puzzle, the_way):
             temp.krotek.deep += 1
             kolejka.append(temp)
 
-    def function(array, direction):
+    def move_way(array, direction):
         if direction == "U":
             if array.krotek.findIndexOfNum(0)[0] != 0:
-                function2(array, "U")
+                checking(array, "U")
         elif direction == "D":
             if array.krotek.findIndexOfNum(0)[0] != array.krotek.rows - 1:
-                function2(array, "D")
+                checking(array, "D")
         elif direction == "R":
             if array.krotek.findIndexOfNum(0)[1] != array.krotek.columns - 1:
-                function2(array, "R")
+                checking(array, "R")
         elif direction == "L":
             if array.krotek.findIndexOfNum(0)[1] != 0:
-                function2(array, "L")
+                checking(array, "L")
 
     while kolejka:
         current = kolejka.pop()
-        if current.krotek.deep == maxdepth:
+        if current.krotek.deep-1 == maxdepth:
             continue
 
         if current.krotek.check():
@@ -57,4 +57,4 @@ def dfs(puzzle, the_way):
             return current.krotek
 
         for i in range(4):
-            function(current, the_way[i])
+            move_way(current, the_way[i])
