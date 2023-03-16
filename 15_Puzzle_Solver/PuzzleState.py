@@ -1,7 +1,8 @@
 class PuzzleState:
+    array = []
     rows = 0
     columns = 0
-    array = []
+    deep = 1
 
     UP = (-1, 0)
     DOWN = (1, 0)
@@ -49,3 +50,13 @@ class PuzzleState:
             for j in range(len(self.array[i])):
                 if self.array[i][j] == number:
                     return i, j
+
+    def hashme(self):
+        hasz = ""
+        for i in range(0, self.rows):
+            for j in range(0, self.columns):
+                hasz += str(self.array[i][j]) + "-"
+        hasz += "d" + str(self.deep)
+        return hasz
+
+

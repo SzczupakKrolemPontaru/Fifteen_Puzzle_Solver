@@ -6,7 +6,7 @@ def bfs(puzzle):
     class bfs_class:
         krotek = puzzle
         path = ""
-        deep = 1
+
 
         def __init__(self, tablica):
             self.krotek = tablica
@@ -27,45 +27,41 @@ def bfs(puzzle):
         if current.krotek.check():
             print(iter)
             print(current.path)
-            print(current.deep)
+            print(current.krotek.deep)
             return current.krotek
 
         if current.krotek.findIndexOfNum(0)[0] != 0:
-            if current.path == "" or current.path[-1] != "D":
                 temp = copy.deepcopy(current)
                 temp.krotek.move(temp.krotek.UP)
-                if tuple(map(tuple, temp.krotek.array)) not in visited:
-                    visited.add(tuple(map(tuple, temp.krotek.array)))
+                if hash(temp.krotek.hashme()) not in visited:
+                    visited.add(hash((temp.krotek.hashme())))
                     temp.path += "U"
-                    temp.deep += 1
+                    temp.krotek.deep += 1
                     kolejka.append(temp)
 
         if current.krotek.findIndexOfNum(0)[1] != 0:
-            if current.path == "" or current.path[-1] != "R":
                 temp = copy.deepcopy(current)
                 temp.krotek.move(temp.krotek.LEFT)
-                if tuple(map(tuple, temp.krotek.array)) not in visited:
-                    visited.add(tuple(map(tuple, temp.krotek.array)))
+                if hash(temp.krotek.hashme()) not in visited:
+                    visited.add(hash((temp.krotek.hashme())))
                     temp.path += "L"
-                    temp.deep += 1
+                    temp.krotek.deep += 1
                     kolejka.append(temp)
 
         if current.krotek.findIndexOfNum(0)[0] != current.krotek.rows - 1:
-            if current.path == "" or current.path[-1] != "U":
                 temp = copy.deepcopy(current)
                 temp.krotek.move(temp.krotek.DOWN)
-                if tuple(map(tuple, temp.krotek.array)) not in visited:
-                    visited.add(tuple(map(tuple, temp.krotek.array)))
+                if hash(temp.krotek.hashme()) not in visited:
+                    visited.add(hash((temp.krotek.hashme())))
                     temp.path += "D"
-                    temp.deep += 1
+                    temp.krotek.deep += 1
                     kolejka.append(temp)
 
         if current.krotek.findIndexOfNum(0)[1] != current.krotek.columns - 1:
-            if current.path == "" or current.path[-1] != "L":
                 temp = copy.deepcopy(current)
                 temp.krotek.move(temp.krotek.RIGHT)
-                if tuple(map(tuple, temp.krotek.array)) not in visited:
-                    visited.add(tuple(map(tuple, temp.krotek.array)))
+                if hash(temp.krotek.hashme()) not in visited:
+                    visited.add(hash((temp.krotek.hashme())))
                     temp.path += "R"
-                    temp.deep += 1
+                    temp.krotek.deep += 1
                     kolejka.append(temp)
