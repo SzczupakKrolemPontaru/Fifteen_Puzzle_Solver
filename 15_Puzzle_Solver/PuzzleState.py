@@ -24,7 +24,15 @@ class PuzzleState:
             result += "\n"
         return result
 
-    def move(self, dir):
+    def move(self, string):
+        if string == "D":
+            dir = self.DOWN
+        elif string == "U":
+            dir = self.UP
+        elif string == "R":
+            dir = self.RIGHT
+        elif string == "L":
+            dir = self.LEFT
         newBlank = (self.findIndexOfNum(0)[0] + dir[0], self.findIndexOfNum(0)[1] + dir[1])
         if ((newBlank[0] < 0) or (newBlank[0] >= self.rows) or (newBlank[1] < 0) or (newBlank[1] >= self.columns)):
             return False
@@ -55,8 +63,9 @@ class PuzzleState:
         hasz = ""
         for i in range(0, self.rows):
             for j in range(0, self.columns):
-                hasz += str(self.array[i][j]) + "-"
-        hasz += "d" + str(self.deep)
-        return hasz
+                hasz += str(self.array[i][j])
+            hasz +="-"
+        hasz += "D" + str(self.deep)
+        return hash(hasz)
 
 

@@ -1,5 +1,5 @@
 from PuzzleState import PuzzleState
-#import Algorithms.Algorithm_AStar as AStar
+# import Algorithms.Algorithm_AStar as AStar
 from Algorithms.Broad import bfs
 from Algorithms.Depth import dfs
 
@@ -19,14 +19,12 @@ def loadPuzzle():
 
     return rows, cols, puzzle
 
+
 puzzle = PuzzleState(*loadPuzzle())
 
 
-# print(puzzle)
-# print(puzzle.check())
+# print(AStar.HammingDistance(puzzle))
+# print(AStar.ManhattanDistance(puzzle))
 
-#print(AStar.HammingDistance(puzzle))
-#print(AStar.ManhattanDistance(puzzle))
-
-print(bfs(puzzle))
-print(dfs(puzzle))
+print(bfs(puzzle, "LRUD"))
+print(dfs(puzzle, "RLUD"))
