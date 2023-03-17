@@ -1,5 +1,5 @@
 from PuzzleState import PuzzleState
-# import Algorithms.Algorithm_AStar as AStar
+from Algorithms.Algorithm_AStar import aStarPuzzle
 from Algorithms.Broad import bfs
 from Algorithms.Depth import dfs
 
@@ -23,8 +23,10 @@ def loadPuzzle():
 puzzle = PuzzleState(*loadPuzzle())
 
 
-# print(AStar.HammingDistance(puzzle))
-# print(AStar.ManhattanDistance(puzzle))
+print(aStarPuzzle(puzzle, "hamn"))
+print(aStarPuzzle(puzzle,"manh"))
 
-print(bfs(puzzle, "LRUD"))
-print(dfs(puzzle, "DURL"))
+
+
+# print(bfs(puzzle, "LRUD"))
+# print(dfs(puzzle, "DURL"))

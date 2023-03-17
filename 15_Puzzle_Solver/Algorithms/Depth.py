@@ -57,4 +57,4 @@ def dfs(puzzle, the_way):
             return current.krotek
 
         for i in range(4):
-            move_way(current, the_way[i])
+            move_way(current, the_way[i])   # this is the Way

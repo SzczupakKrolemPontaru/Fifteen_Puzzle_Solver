@@ -1,38 +1,89 @@
-import numpy as np
+import collections
+import copy
+
+direction = ["D","U","R",'L']
+
+def aStarPuzzle(puzzle,heuristic):
+
+    class AStarPuzzle:
+        krotek = puzzle
+        path = ""
+        score = 0
+
+        def __init__(self, tablica):
+            self.krotek = tablica
+
+        def __lt__(self, other) -> bool:
+            return self.score < other.score
+
+    kolejka = []
+    visited = set()
+    start = AStarPuzzle(puzzle)
+
+    def ManhattanDistance(puzzle):
+        h_points = 0
+        goalArray = []
+
+        for i in range(0, puzzle.krotek.rows):
+            row = []
+            for j in range(0, puzzle.krotek.columns):
+                row.append(i * puzzle.krotek.columns + j + 1)
+                if (i == puzzle.krotek.rows - 1 and j == puzzle.krotek.columns - 1):
+                    row.pop()
+                    row.append(0)
+            goalArray.append(row)
+
+        for i in range(puzzle.krotek.rows):
+            for j in range(puzzle.krotek.columns):
+                i1, j1 = puzzle.krotek.findIndexOfNum(goalArray[i][j])
+                h_points += abs(i - i1) + abs(j - j1)
+
+        return h_points + puzzle.krotek.deep
+
+    def HammingDistance(puzzle):
+        h_points = 0
+
+        for i in range(puzzle.krotek.rows):
+            for j in range(puzzle.krotek.columns):
+                if (i == puzzle.krotek.rows - 1 and j == puzzle.krotek.columns - 1):
+                    if (puzzle.krotek.array[i][j] != 0):
+                        h_points += 1
+                else:
+                    expected = i * puzzle.krotek.columns + j + 1
+                    if (puzzle.krotek.array[i][j] != expected):
+                        h_points += 1
+
+        return h_points + puzzle.krotek.deep   
+
+    if start.krotek.check():
+        print("układ rozwiazany bez ruchu")
+        return start.krotek
+
+    kolejka.append(start)
 
 
-def ManhattanDistance(puzzle):
-    h_points = 0
-    goalArray = []
+    while kolejka:
+        current  = kolejka.pop()
+        visited.add(current.krotek.hashme())
 
-    for i in range(0, puzzle.rows):
-        row = []
-        for j in range(0, puzzle.columns):
-            row.append(i * puzzle.columns + j + 1)
-            if (i == puzzle.rows - 1 and j == puzzle.columns - 1):
-                row.pop()
-                row.append(0)
-        goalArray.append(row)
+        if current.krotek.check():
+            print(iter)
+            print(current.path)
+            print(current.krotek.deep)
+            return current.krotek
+        
+        for i in range (0,4):
+            temp = copy.deepcopy(current)
+            temp.krotek.move(direction[i])
+            if temp.krotek.hashme() not in visited:
+                visited.add(temp.krotek.hashme())
+                temp.path += direction[i]
+                temp.krotek.deep += 1
+                if (heuristic == "manh"):
+                    temp.score = ManhattanDistance(temp) + temp.krotek.deep
+                elif (heuristic == "hamn"):
+                    temp.score = HammingDistance(temp) + temp.krotek.deep
+                kolejka.append(temp)
 
-    for i in range(puzzle.rows):
-        for j in range(puzzle.columns):
-            i1, j1 = puzzle.findIndexOfNum(goalArray[i][j])
-            h_points += abs(i - i1) + abs(j - j1)
-
-    return h_points
-
-
-def HammingDistance(puzzle):
-    h_points = 0
-
-    for i in range(puzzle.rows):
-        for j in range(puzzle.columns):
-            if (i == puzzle.rows - 1 and j == puzzle.columns - 1):
-                if (puzzle.array[i][j] != 0):
-                    h_points += 1
-            else:
-                expected = i * puzzle.columns + j + 1
-                if (puzzle.array[i][j] != expected):
-                    h_points += 1
-
-    return h_points
+        kolejka.sort(reverse=True)
+        

@@ -23,6 +23,7 @@ class PuzzleState:
                 result += str(self.array[i][j]) + " "
             result += "\n"
         return result
+    
 
     def move(self, string):
         if string == "D":
