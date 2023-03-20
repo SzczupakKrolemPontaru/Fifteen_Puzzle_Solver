@@ -1,6 +1,6 @@
 import collections
 import copy
-
+import time
 
 def bfs(puzzle, the_way):
     class bfs_class:
@@ -18,6 +18,8 @@ def bfs(puzzle, the_way):
         print("układ rozwiazany bez ruchu")
         return start.krotek
     kolejka.append(start)
+    start = time.time()
+    iteration = 1
 
     def checking(array, direction):
         temp = copy.deepcopy(array)
@@ -43,13 +45,16 @@ def bfs(puzzle, the_way):
                 checking(array, "L")
 
     while kolejka:
-
+        iteration += 1
         current = kolejka.popleft()
 
         if current.krotek.check():
-            print(iter)
+            print("iteracje: ", iteration)
             print(current.path)
-            print(current.krotek.deep)
+            print("glebokosc rekursji: ",current.krotek.deep)
+            print("stany odwiedzone: ", len(visited))
+            end = time.time()
+            print("czas",end - start)
             return current.krotek
 
         for i in range(4):

@@ -1,6 +1,6 @@
 import collections
 import copy
-
+import time
 
 def dfs(puzzle, the_way):
     maxdepth = 15
@@ -16,13 +16,13 @@ def dfs(puzzle, the_way):
     kolejka = collections.deque()
     visited = set()
     start = depp_class(puzzle)
-
+    iteration = 1
     if start.krotek.check():
         print("układ rozwiazany bez ruchu")
         return start.krotek
 
     kolejka.append(start)
-
+    start = time.time()
     def checking(array, direction):
         temp = copy.deepcopy(array)
         temp.krotek.move(direction)
@@ -48,14 +48,18 @@ def dfs(puzzle, the_way):
                 checking(array, "L")
 
     while kolejka:
+        iteration += 1
         current = kolejka.pop()
         if current.krotek.deep-1 == maxdepth:
             continue
 
         if current.krotek.check():
-            print(iter)
+            print("iteracje: ", iteration)
             print(current.path)
-            print(current.krotek.deep)
+            print("glebokosc rekursji: ",current.krotek.deep)
+            print("stany odwiedzone: ", len(visited))
+            end = time.time()
+            print("czas",end - start)
             return current.krotek
 
         for i in range(4):
