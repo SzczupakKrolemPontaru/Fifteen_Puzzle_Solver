@@ -6,7 +6,7 @@ def bfs(puzzle, the_way):
     class bfs_class:
         krotek = puzzle
         path = ""
-
+        lastmove = "BASE"
         def __init__(self, tablica):
             self.krotek = tablica
 
@@ -30,16 +30,16 @@ def bfs(puzzle, the_way):
 
     def move_way(array, direction):
         if direction == "U":
-            if array.krotek.findIndexOfNum(0)[0] != 0:
+            if array.krotek.findIndexOfNum(0)[0] != 0 and array.lastmove != "D":
                 checking(array, "U")
         elif direction == "D":
-            if array.krotek.findIndexOfNum(0)[0] != array.krotek.rows - 1:
+            if array.krotek.findIndexOfNum(0)[0] != array.krotek.rows - 1 and array.lastmove != "U":
                 checking(array, "D")
         elif direction == "R":
-            if array.krotek.findIndexOfNum(0)[1] != array.krotek.columns - 1:
+            if array.krotek.findIndexOfNum(0)[1] != array.krotek.columns - 1and array.lastmove != "L":
                 checking(array, "R")
         elif direction == "L":
-            if array.krotek.findIndexOfNum(0)[1] != 0:
+            if array.krotek.findIndexOfNum(0)[1] != 0 and array.lastmove != "R":
                 checking(array, "L")
 
     while kolejka:

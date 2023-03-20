@@ -23,10 +23,7 @@ def loadPuzzle():
 puzzle = PuzzleState(*loadPuzzle())
 
 
-print(aStarPuzzle(puzzle, "hamn"))
-print(aStarPuzzle(puzzle,"manh"))
-
-
-
-# print(bfs(puzzle, "LRUD"))
-# print(dfs(puzzle, "DURL"))
+#print(aStarPuzzle(puzzle, "hamn"))
+#print(aStarPuzzle(puzzle,"manh"))
+print(bfs(puzzle, "LRUD"))
+print(dfs(puzzle, "DURL"))
