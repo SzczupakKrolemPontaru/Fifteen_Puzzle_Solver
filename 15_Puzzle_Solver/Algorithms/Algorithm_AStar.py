@@ -1,6 +1,6 @@
 import collections
 import copy
-
+import time
 direction = ["D","U","R",'L']
 
 def aStarPuzzle(puzzle,heuristic):
@@ -60,16 +60,22 @@ def aStarPuzzle(puzzle,heuristic):
         return start.krotek
 
     kolejka.append(start)
+    start = time.time()
+    iteration = 1
 
 
     while kolejka:
+        iteration += 1
         current  = kolejka.pop()
         visited.add(current.krotek.hashme())
 
         if current.krotek.check():
-            print(iter)
+            print("iteracje: ", iteration)
             print(current.path)
-            print(current.krotek.deep)
+            print("glebokosc rekursji: ",current.krotek.deep)
+            print("stany odwiedzone: ", len(visited))
+            end = time.time()
+            print("czas",end - start)
             return current.krotek
         
         for i in range (0,4):
