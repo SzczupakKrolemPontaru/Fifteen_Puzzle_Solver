@@ -2,31 +2,34 @@ import collections
 import copy
 import time
 
-def bfs(puzzle, the_way):
-    class bfs_class:
+def dfs(puzzle, the_way):
+    maxdepth = 15
+
+    class depp_class:
         krotek = puzzle
         path = ""
         lastmove = "BASE"
+
         def __init__(self, tablica):
             self.krotek = tablica
 
     kolejka = collections.deque()
     visited = set()
-
-    start = bfs_class(puzzle)
+    start = depp_class(puzzle)
+    iteration = 1
     if start.krotek.check():
         print("układ rozwiazany bez ruchu")
         return start.krotek
+
     kolejka.append(start)
     start = time.time()
-    iteration = 1
-
     def checking(array, direction):
         temp = copy.deepcopy(array)
         temp.krotek.move(direction)
         if temp.krotek.hashme() not in visited:
             visited.add(temp.krotek.hashme())
             temp.path += direction
+            temp.lastmove = direction
             temp.krotek.deep += 1
             kolejka.append(temp)
 
@@ -46,7 +49,9 @@ def bfs(puzzle, the_way):
 
     while kolejka:
         iteration += 1
-        current = kolejka.popleft()
+        current = kolejka.pop()
+        if current.krotek.deep-1 == maxdepth:
+            continue
 
         if current.krotek.check():
             print("iteracje: ", iteration)
@@ -58,4 +63,4 @@ def bfs(puzzle, the_way):
             return current.krotek
 
         for i in range(4):
-            move_way(current, the_way[i])
+            move_way(current, the_way[i])   # this is the Way

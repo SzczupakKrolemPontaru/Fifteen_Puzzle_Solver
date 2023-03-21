@@ -1,23 +1,13 @@
 from PuzzleState import PuzzleState
-# import Algorithms.Algorithm_AStar as AStar
+from Algorithms.Algorithm_AStar import aStarPuzzle
 from Algorithms.Broad import bfs
-import sys
-
-argumenty = []
-for arg in sys.argv:
-    argumenty.append(str(arg))
-
-fSource = '4x4_01_0001.txt'
-fSolution = ''
-strategy = ''
-parameter = ''
-fStatistics = ''
+from Algorithms.Depth import dfs
 
 
 def loadPuzzle():
     puzzle = []
 
-    file = open(fSource, 'r')
+    file = open('4x4_01_0001.txt', 'r')
     temp = file.readline()
     cols = temp.split(" ")[0]
     rows = temp.split(" ")[1].split()[0]
@@ -32,5 +22,8 @@ def loadPuzzle():
 
 puzzle = PuzzleState(*loadPuzzle())
 
-print(bfs(puzzle))
-print("pomusz")
+
+print(aStarPuzzle(puzzle, "hamn"))
+print(aStarPuzzle(puzzle,"manh"))
+print(bfs(puzzle, "LRUD"))
+print(dfs(puzzle, "LRUD"))
