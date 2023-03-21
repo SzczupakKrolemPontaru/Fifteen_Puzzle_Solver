@@ -10,7 +10,6 @@ class PuzzleState:
     LEFT = (0, -1)
     RIGHT = (0, 1)
 
-    directories = {"U", "D", "L", "R"}
 
     def __init__(self, rows, columns, puzzle):
         self.rows = int(rows)
