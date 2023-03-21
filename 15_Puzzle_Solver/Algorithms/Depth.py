@@ -19,21 +19,22 @@ def dfs(puzzle, the_way):
         if temp.hashme() not in visited:
             visited.add(temp.hashme())
             temp.path += direction
+            temp.lastmove = direction
             temp.deep += 1
             kolejka.append(temp)
 
     def move_way(array, direction):
         if direction == "U":
-            if array.findIndexOfNum(0)[0] != 0:
+            if array.findIndexOfNum(0)[0] != 0 and array.lastmove != "D":
                 checking(array, "U")
         elif direction == "D":
-            if array.findIndexOfNum(0)[0] != array.rows - 1:
+            if array.findIndexOfNum(0)[0] != array.rows - 1 and array.lastmove != "U":
                 checking(array, "D")
         elif direction == "R":
-            if array.findIndexOfNum(0)[1] != array.columns - 1:
+            if array.findIndexOfNum(0)[1] != array.columns - 1 and array.lastmove != "L":
                 checking(array, "R")
         elif direction == "L":
-            if array.findIndexOfNum(0)[1] != 0:
+            if array.findIndexOfNum(0)[1] != 0 and array.lastmove != "R":
                 checking(array, "L")
 
     while kolejka:

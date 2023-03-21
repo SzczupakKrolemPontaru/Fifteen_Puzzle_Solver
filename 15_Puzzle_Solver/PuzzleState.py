@@ -4,6 +4,7 @@ class PuzzleState:
     columns = 0
     deep = 1
     path = ""
+    lastmove = "MOVE"
 
     UP = (-1, 0)
     DOWN = (1, 0)
