@@ -3,6 +3,7 @@ class PuzzleState:
     rows = 0
     columns = 0
     deep = 1
+    path = ""
 
     UP = (-1, 0)
     DOWN = (1, 0)
