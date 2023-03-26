@@ -3,11 +3,8 @@ import copy
 import time
 
 def bfs(puzzle, the_way):
-
-
     kolejka = collections.deque()
     visited = set()
-
     start = puzzle
     kolejka.append(start)
     start = time.time()
@@ -45,8 +42,8 @@ def bfs(puzzle, the_way):
             # print(current.path)
             # print("glebokosc rekursji: ",current.deep)
             # print("stany odwiedzone: ", len(visited))
-            end = time.time()
             # print("czas",end - start)
+            end = time.time()
             return len(current.path), current.path, len(visited), iteration, current.deep, round((end-start),3)
 
         for i in range(4):
