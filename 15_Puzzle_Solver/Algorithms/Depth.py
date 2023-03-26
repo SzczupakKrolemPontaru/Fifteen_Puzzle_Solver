@@ -3,14 +3,12 @@ import copy
 import time
 
 def dfs(puzzle, the_way):
-    maxdepth = 15
+    maxdepth = 20
 
     kolejka = collections.deque()
     visited = set()
     start = puzzle
     iteration = 1
-
-
     kolejka.append(start)
     start = time.time()
     def checking(array, direction):
@@ -25,16 +23,16 @@ def dfs(puzzle, the_way):
 
     def move_way(array, direction):
         if direction == "U":
-            if array.findIndexOfNum(0)[0] != 0 and array.lastmove != "D":
+            if array.findIndexOfNum(0)[0] != 0:
                 checking(array, "U")
         elif direction == "D":
-            if array.findIndexOfNum(0)[0] != array.rows - 1 and array.lastmove != "U":
+            if array.findIndexOfNum(0)[0] != array.rows - 1:
                 checking(array, "D")
         elif direction == "R":
-            if array.findIndexOfNum(0)[1] != array.columns - 1 and array.lastmove != "L":
+            if array.findIndexOfNum(0)[1] != array.columns - 1:
                 checking(array, "R")
         elif direction == "L":
-            if array.findIndexOfNum(0)[1] != 0 and array.lastmove != "R":
+            if array.findIndexOfNum(0)[1] != 0:
                 checking(array, "L")
 
     while kolejka:
