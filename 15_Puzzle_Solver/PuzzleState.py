@@ -67,7 +67,6 @@ class PuzzleState:
             for j in range(0, self.columns):
                 hasz += str(self.array[i][j])
             hasz +="-"
-        hasz += "D" + str(self.deep)
         return hash(hasz)
 
 
