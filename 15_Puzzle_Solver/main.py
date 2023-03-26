@@ -5,13 +5,15 @@ from Algorithms.Depth import dfs
 import sys
 
 plikWejsiowy = '4x4_01_0001.txt'    # default
+path = 'C:/Users/Husaiin/Desktop/Studia/SEM 4/SkyNet_SISE/15_Puzzle_Solver/Rozwiazania/'
+
 
 if len(sys.argv) > 1:
     strategia = sys.argv[1]
     parametr = sys.argv[2]
     plikWejsiowy = sys.argv[3]
-    plikWyjsciowy = sys.argv[4]
-    statystyki = sys.argv[5]
+    plikWyjsciowy = path + sys.argv[4]
+    statystyki = path + sys.argv[5]
 
 def loadPuzzle():
     puzzle = []
@@ -28,10 +30,8 @@ def loadPuzzle():
 
     return rows, cols, puzzle
 
-file1 = open(plikWyjsciowy, 'w')
-
-
 puzzle = PuzzleState(*loadPuzzle())
+
 
 if (strategia == "bfs"):
     rozwiazania = bfs(puzzle, parametr)
@@ -49,6 +49,7 @@ if (strategia == "bfs"):
 
 elif (strategia == "dfs"):
     rozwiazania = dfs(puzzle, parametr)
+
     with open(plikWyjsciowy, 'w') as f:
         print(rozwiazania[0], file=f)
         print(rozwiazania[1], file=f)
@@ -71,5 +72,5 @@ elif (strategia == "astr"):
         print(rozwiazania[0], file=f)
         print(rozwiazania[2], file=f)
         print(rozwiazania[3], file=f)
-        print(rozwiazania[4], file=f)   
-        print(rozwiazania[5], file=f)  
+        print(rozwiazania[4], file=f)  
+        print(rozwiazania[5], file=f)
