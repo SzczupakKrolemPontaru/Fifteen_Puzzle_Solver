@@ -44,13 +44,14 @@ def dfs(puzzle, the_way):
             continue
 
         if current.check():
-            print("iteracje: ", iteration)
-            print(current.path)
-            print("glebokosc rekursji: ",current.deep)
-            print("stany odwiedzone: ", len(visited))
+
+            #print("iteracje: ", iteration)
+            #print(current.path)
+            #print("glebokosc rekursji: ",current.deep)
+            #print("stany odwiedzone: ", len(visited))
             end = time.time()
-            print("czas",end - start)
-            return current
+            #print("czas",end - start)
+            return len(current.path), current.path, len(visited), iteration, current.deep, round((end-start),3)
 
         for i in range(4):
             move_way(current, the_way[i])   # this is the Way

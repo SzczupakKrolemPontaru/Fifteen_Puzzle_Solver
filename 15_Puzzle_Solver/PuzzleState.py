@@ -16,7 +16,7 @@ class PuzzleState:
         self.rows = int(rows)
         self.columns = int(columns)
         self.array = puzzle
-
+    '''
     def __str__(self):
         result = ""
         for i in range(0, self.rows):
@@ -24,7 +24,7 @@ class PuzzleState:
                 result += str(self.array[i][j]) + " "
             result += "\n"
         return result
-    
+    '''
 
     def move(self, string):
         if string == "D":
