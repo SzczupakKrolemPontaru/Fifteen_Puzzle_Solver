@@ -56,7 +56,7 @@ def aStarPuzzle(puzzle,heuristic):
         return h_points + puzzle.krotek.deep   
 
     if start.krotek.check():
-        print("układ rozwiazany bez ruchu")
+        # print("układ rozwiazany bez ruchu")
         return start.krotek
 
     kolejka.append(start)
@@ -70,13 +70,13 @@ def aStarPuzzle(puzzle,heuristic):
         visited.add(current.krotek.hashme())
 
         if current.krotek.check():
-            print("iteracje: ", iteration)
-            print(current.path)
-            print("glebokosc rekursji: ",current.krotek.deep)
-            print("stany odwiedzone: ", len(visited))
+            #print("iteracje: ", iteration)
+            #print(current.path)
+            #print("glebokosc rekursji: ",current.krotek.deep)
+            #print("stany odwiedzone: ", len(visited))
             end = time.time()
-            print("czas",end - start)
-            return current.krotek
+            #print("czas",end - start)
+            return len(current.path), current.path, len(visited), iteration, current.krotek.deep, round((end-start),3)
         
         for i in range (0,4):
             temp = copy.deepcopy(current)
