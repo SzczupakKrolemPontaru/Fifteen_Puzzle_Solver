@@ -43,12 +43,8 @@ def bfs(puzzle, the_way):
             # print("glebokosc rekursji: ",current.deep)
             # print("stany odwiedzone: ", len(visited))
             # print("czas",end - start)
-<<<<<<< HEAD
-            return len(current.path), current.path, len(visited), iteration, current.deep-1, round((end-start),3)
-=======
             end = time.time()
-            return len(current.path), current.path, len(visited), iteration, current.deep, round((end-start),3)
->>>>>>> 0d77bcbc74f31bfb196e6e61463f5709091e78ec
+            return len(current.path), current.path, len(visited), iteration, current.deep-1, round((end-start),3)
 
         for i in range(4):
             move_way(current, the_way[i])

@@ -5,7 +5,7 @@ from Algorithms.Depth import dfs
 import sys
 
 plikWejsiowy = '4x4_01_0001.txt'    # default
-path = 'C:/Users/Husaiin/Desktop/Studia/SEM 4/SkyNet_SISE/15_Puzzle_Solver/Rozwiazania/'
+path = 'C:/Users/Husaiin/Desktop/Studia/SEM4/SkyNet_SISE/15_Puzzle_Solver/Rozwiazania/'
 
 
 if len(sys.argv) > 1:

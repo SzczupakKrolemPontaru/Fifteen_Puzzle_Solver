@@ -23,9 +23,9 @@
 
 param([string]$strategy, [string]$param)
 
-$Progcmd = 'python C:/Users/Husaiin/Desktop/Studia/SEM 4/SkyNet_SISE/15_Puzzle_Solver/main.py'
+$Progcmd = 'python C:\Users\Husaiin\Desktop\Studia\SEM4\SkyNet_SISE\15_Puzzle_Solver\main.py'
 $Orders = @('RDUL', 'RDLU', 'DRUL', 'DRLU', 'LUDR',  'LURD', 'ULDR', 'ULRD')
-$Heuristics = @('hamm', 'manh')
+$Heuristics = @('hamn', 'manh')
 $InitFilenameRegex = '^[a-zA-Z0-9]+_[0-9]+_[0-9]+.txt$'
 
 function RunProg([string]$strategy, [string]$param) {
