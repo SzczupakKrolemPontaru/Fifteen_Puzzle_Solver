@@ -67,22 +67,17 @@ def aStarPuzzle(puzzle,heuristic):
     while kolejka:
         iteration += 1
         current  = kolejka.pop()
-        visited.add(current.krotek.hashme())
+        visited.add(current.krotek.hashState())
 
         if current.krotek.check():
-            #print("iteracje: ", iteration)
-            #print(current.path)
-            #print("glebokosc rekursji: ",current.krotek.deep)
-            #print("stany odwiedzone: ", len(visited))
             end = time.time()
-            #print("czas",end - start)
             return len(current.path), current.path, len(visited), iteration, current.krotek.deep-1, round((end-start),3)
         
         for i in range (0,4):
             temp = copy.deepcopy(current)
             temp.krotek.move(direction[i])
-            if temp.krotek.hashme() not in visited:
-                visited.add(temp.krotek.hashme())
+            if temp.krotek.hashState() not in visited:
+                visited.add(temp.krotek.hashState())
                 temp.path += direction[i]
                 temp.krotek.deep += 1
                 if (heuristic == "manh"):

@@ -4,7 +4,7 @@ class PuzzleState:
     columns = 0
     deep = 1
     path = ""
-    lastmove = "MOVE"
+    lastmove = "INIT"
 
     UP = (-1, 0)
     DOWN = (1, 0)
@@ -16,15 +16,6 @@ class PuzzleState:
         self.rows = int(rows)
         self.columns = int(columns)
         self.array = puzzle
-    '''
-    def __str__(self):
-        result = ""
-        for i in range(0, self.rows):
-            for j in range(0, self.columns):
-                result += str(self.array[i][j]) + " "
-            result += "\n"
-        return result
-    '''
 
     def move(self, string):
         if string == "D":
@@ -61,7 +52,7 @@ class PuzzleState:
                 if self.array[i][j] == number:
                     return i, j
 
-    def hashme(self):
+    def hashState(self):
         hasz = ""
         for i in range(0, self.rows):
             for j in range(0, self.columns):
