@@ -1,2 +1,1 @@
-# SkyNet_SISE
-Sequel do Terminatora 
+Project for Artificial Intelligence and Expert Systems class at TUL
