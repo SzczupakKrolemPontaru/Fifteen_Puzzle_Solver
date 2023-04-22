@@ -3,12 +3,13 @@ import copy
 import time
 
 def bfs(puzzle, the_way):
-    kolejka = collections.deque()
+    queue = collections.deque()
     visited = set()
     start = puzzle
-    kolejka.append(start)
+    queue.append(start)
     start = time.time()
     iteration = 1
+    the_way[::-1]
 
     def MoveAndCheck(array, direction):
         temp = copy.deepcopy(array)
@@ -17,7 +18,7 @@ def bfs(puzzle, the_way):
             visited.add(temp.hashState())
             temp.path += direction
             temp.deep += 1
-            kolejka.append(temp)
+            queue.append(temp)
 
     def move_way(array, direction):
         if direction == "U":
@@ -35,9 +36,9 @@ def bfs(puzzle, the_way):
         return
 
 
-    while kolejka:
+    while queue:
         iteration += 1
-        current = kolejka.popleft()
+        current = queue.popleft()
 
         if current.check():
             end = time.time()

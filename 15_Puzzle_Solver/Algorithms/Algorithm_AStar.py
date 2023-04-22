@@ -16,7 +16,7 @@ def aStarPuzzle(puzzle,heuristic):
         def __lt__(self, other) -> bool:
             return self.score < other.score
 
-    kolejka = []
+    queue = []
     visited = set()
     start = AStarPuzzle(puzzle)
 
@@ -56,17 +56,16 @@ def aStarPuzzle(puzzle,heuristic):
         return h_points + puzzle.krotek.deep   
 
     if start.krotek.check():
-        # print("układ rozwiazany bez ruchu")
         return start.krotek
 
-    kolejka.append(start)
+    queue.append(start)
     start = time.time()
     iteration = 1
 
 
-    while kolejka:
+    while queue:
         iteration += 1
-        current  = kolejka.pop()
+        current  = queue.pop()
         visited.add(current.krotek.hashState())
 
         if current.krotek.check():
@@ -84,7 +83,7 @@ def aStarPuzzle(puzzle,heuristic):
                     temp.score = ManhattanDistance(temp) + temp.krotek.deep
                 elif (heuristic == "hamn"):
                     temp.score = HammingDistance(temp) + temp.krotek.deep
-                kolejka.append(temp)
+                queue.append(temp)
 
-        kolejka.sort(reverse=True)
+        queue.sort(reverse=True)
         
